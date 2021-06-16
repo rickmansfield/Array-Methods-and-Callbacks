@@ -45,8 +45,8 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(array, getFinalscb) {
-    const Years = getFinalscb(array);
-    return (Years.map(item => item.Year));
+    const years = getFinalscb(array);
+    return (years.map(item => item.Year));
 }
 console.log('Task 3', getYears(fifaData, getFinals));
 
@@ -58,10 +58,12 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(array, getFinalscb2) {
+    const winners = getFinalscb2(array);
+    return winners.map(item => item["Home Team Goals"] > item["Away Team Goals"]? item["Home Team Name"]: item["Away Team Name"]);
 }
-
+console.log('Task 4', getWinners(fifaData, getFinals));
+// console.log(getWinners(fifaData, getFinals));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
